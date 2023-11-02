@@ -1,0 +1,180 @@
+{
+  "name": "home",
+  "type": "page",
+  "url": "/home",
+  "params": {},
+  "variables": [
+    {
+      "name": "petstore",
+      "type": "open-api",
+      "id": "6543730e196f3c26b100a984"
+    },
+    {
+      "name": "loadData",
+      "type": "method",
+      "description": "",
+      "body": "await new Promise(resolve => setTimeout(resolve, 2000))\r\n$ctrl.petstore.getPetById({\r\n    petId: 1\r\n})\r\nreturn [\r\n    {\r\n        number: 1,\r\n        text: \"a\"\r\n    },\r\n    {\r\n        number: 2,\r\n        text: \"b\"\r\n    },\r\n    {\r\n        number: 3,\r\n        text: \"c\"\r\n    }\r\n]",
+      "invokeOnLoad": false,
+      "isAsync": true,
+      "returnType": {
+        "name": "any"
+      },
+      "parameters": []
+    }
+  ],
+  "children": [
+    {
+      "name": "div",
+      "nodeName": "div",
+      "elementId": "",
+      "attributes": [
+        {
+          "property": "data-id",
+          "value": "iA9_cU"
+        }
+      ],
+      "classList": [],
+      "conditionalClasses": [],
+      "contentType": "text",
+      "displayExpression": "",
+      "events": {},
+      "iterate": {
+        "array": "",
+        "variable": "",
+        "trackByIndex": false
+      },
+      "styles": [
+        {
+          "enabled": true,
+          "property": "height",
+          "value": "100% !important"
+        },
+        {
+          "enabled": true,
+          "property": "width",
+          "value": "100% !important"
+        }
+      ],
+      "layout": {
+        "container": {
+          "type": "grid",
+          "columns": [
+            {
+              "type": "span",
+              "value": 1
+            }
+          ],
+          "rows": [
+            {
+              "type": "max-content"
+            },
+            {
+              "type": "span",
+              "value": 1
+            }
+          ],
+          "items": []
+        }
+      },
+      "children": [
+        {
+          "name": "Button",
+          "nodeName": "bln-button",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "_1SGgq"
+            },
+            {
+              "property": "core",
+              "value": ""
+            }
+          ],
+          "classList": [],
+          "conditionalClasses": [],
+          "contentType": "text",
+          "displayExpression": "",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [],
+          "layout": {
+            "cell": {
+              "type": "grid-item"
+            }
+          },
+          "children": [],
+          "comments": "",
+          "type": "core-component",
+          "id": "button",
+          "expressions": [
+            {
+              "expression": "\"Reload\"",
+              "to": "label"
+            },
+            {
+              "expression": "$ctrl.loadData()",
+              "to": "onClick"
+            }
+          ]
+        },
+        {
+          "name": "Table",
+          "nodeName": "bln-table",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "u5huKU"
+            },
+            {
+              "property": "core",
+              "value": ""
+            }
+          ],
+          "classList": [],
+          "conditionalClasses": [],
+          "contentType": "text",
+          "displayExpression": "",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [
+            {
+              "property": "--bln-table-height",
+              "value": "500px",
+              "enabled": true
+            }
+          ],
+          "layout": {
+            "cell": {
+              "type": "grid-item"
+            }
+          },
+          "children": [],
+          "comments": "",
+          "type": "core-component",
+          "id": "table",
+          "expressions": [
+            {
+              "expression": "$ctrl.loadData()",
+              "to": "data"
+            },
+            {
+              "expression": "[{\n        name: \"Some Text\",\n        enableSorting: true,\n        enableFiltering: false,\n        enablePinning: false,\n        valueKey: \"text\",\n        sortBy: \"none\",\n        type: \"string\",\n        formatter: \"\",\n        cellTooltip: \"row.number === 1 ? \\\"a one\\\" : (row.number === 2 ? \\\"b two\\\" : \\\"c three\\\") \"\n    },\n    {\n        name: \"Some Number\",\n        enableSorting: true,\n        enableFiltering: false,\n        enablePinning: false,\n        valueKey: \"number\",\n        sortBy: \"none\",\n        type: \"number\",\n        formatter: \"\",\n        cellTooltip: \"\"\n    }\n]",
+              "to": "columns"
+            }
+          ]
+        }
+      ],
+      "comments": ""
+    }
+  ]
+}
